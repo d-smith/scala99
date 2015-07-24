@@ -20,4 +20,8 @@ class P99IntTest extends FunSuite {
     assert(27.isPrime === false)
     assert(49.isPrime === false)
   }
+
+  test("gcd of 36 and 63") {
+    assert(gcd(36,63) === 9)
+  }
 }

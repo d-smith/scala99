@@ -17,4 +17,7 @@ object P99Int {
   implicit def intToP99Int(i: Int) = new P99Int(i)
 
   val primes = Stream.cons(2, Stream.from(3,2) filter { _.isPrime })
+
+  def gcd(m: Int, n: Int) : Int =
+    if(n == 0) m else gcd(n, m % n)
 }
