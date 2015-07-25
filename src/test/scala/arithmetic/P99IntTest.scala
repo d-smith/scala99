@@ -24,4 +24,9 @@ class P99IntTest extends FunSuite {
   test("gcd of 36 and 63") {
     assert(gcd(36,63) === 9)
   }
+
+  test("coprimes") {
+    assert(35.isCoprimeTo(64))
+    assert(!2.isCoprimeTo(4))
+  }
 }

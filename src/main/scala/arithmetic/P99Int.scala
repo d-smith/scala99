@@ -10,7 +10,7 @@ class P99Int(n: Int) {
   def isPrime: Boolean =
     (n > 1) && (primes takeWhile { _ <= Math.sqrt(n) } forall { n % _ != 0 })
 
-
+  def isCoprimeTo(x: Int) : Boolean = gcd(n,x) == 1
 }
 
 object P99Int {
