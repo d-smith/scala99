@@ -11,6 +11,8 @@ class P99Int(n: Int) {
     (n > 1) && (primes takeWhile { _ <= Math.sqrt(n) } forall { n % _ != 0 })
 
   def isCoprimeTo(x: Int) : Boolean = gcd(n,x) == 1
+
+  def totient() : Int = (1 to 10) filter { isCoprimeTo _} length
 }
 
 object P99Int {

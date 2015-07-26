@@ -29,4 +29,8 @@ class P99IntTest extends FunSuite {
     assert(35.isCoprimeTo(64))
     assert(!2.isCoprimeTo(4))
   }
+
+  test("Euler's totient function of 10 count 4 coprimes") {
+    assert(4 === 10.totient)
+  }
 }
