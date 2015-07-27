@@ -33,4 +33,8 @@ class P99IntTest extends FunSuite {
   test("Euler's totient function of 10 count 4 coprimes") {
     assert(4 === 10.totient)
   }
+
+  test("The prime factors of 315 are 3,3,5,7") {
+    assert(315.primeFactors() === List(3,3,5,7))
+  }
 }

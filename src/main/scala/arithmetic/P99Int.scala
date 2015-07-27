@@ -13,6 +13,16 @@ class P99Int(n: Int) {
   def isCoprimeTo(x: Int) : Boolean = gcd(n,x) == 1
 
   def totient() : Int = (1 to 10) filter { isCoprimeTo _} length
+
+  def primeFactors() : List[Int] = {
+    def primeFactorsR(i: Int, primeStream: Stream[Int]) : List[Int] = {
+      if (i.isPrime)  List(i)
+      else if(i % primeStream.head == 0) primeStream.head :: primeFactorsR(i / primeStream.head, primeStream)
+      else primeFactorsR(i, primeStream.tail)
+
+    }
+    primeFactorsR(n, primes)
+  }
 }
 
 object P99Int {
