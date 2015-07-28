@@ -37,4 +37,8 @@ class P99IntTest extends FunSuite {
   test("The prime factors of 315 are 3,3,5,7") {
     assert(315.primeFactors() === List(3,3,5,7))
   }
+
+  test("We can calculate the multiplicity of a number's prime factors") {
+    assert(315.primeFactorsMultiplicity() === List((3,2),(5,1),(7,1)))
+  }
 }

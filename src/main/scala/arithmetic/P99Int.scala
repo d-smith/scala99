@@ -1,5 +1,7 @@
 package arithmetic
 
+import lists.P10
+
 
 class P99Int(n: Int) {
   import P99Int._
@@ -23,6 +25,9 @@ class P99Int(n: Int) {
     }
     primeFactorsR(n, primes)
   }
+
+  def primeFactorsMultiplicity() : List[(Int,Int)] =
+    P10.encode(n.primeFactors) map { _.swap }
 }
 
 object P99Int {
