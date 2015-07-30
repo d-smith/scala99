@@ -30,7 +30,7 @@ class P99IntTest extends FunSuite {
     assert(!2.isCoprimeTo(4))
   }
 
-  test("Euler's totient function of 10 count 4 coprimes") {
+  test("Euler's totient function for 10 counts 4 coprimes") {
     assert(4 === 10.totient)
   }
 
@@ -40,5 +40,9 @@ class P99IntTest extends FunSuite {
 
   test("We can calculate the multiplicity of a number's prime factors") {
     assert(315.primeFactorsMultiplicity() === List((3,2),(5,1),(7,1)))
+  }
+
+  test("The improved totient function for 10 counts 4 coprimes") {
+    assert(4 === 10.totientImproved)
   }
 }

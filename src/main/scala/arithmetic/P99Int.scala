@@ -28,6 +28,10 @@ class P99Int(n: Int) {
 
   def primeFactorsMultiplicity() : List[(Int,Int)] =
     P10.encode(n.primeFactors) map { _.swap }
+
+  def totientImproved() : Int = n.primeFactorsMultiplicity.foldLeft(1){ (r,f) =>
+    f match { case (p,m) => r * (p - 1) * Math.pow(p, m - 1).toInt}
+  }
 }
 
 object P99Int {
