@@ -42,3 +42,25 @@ object P99Int {
   def gcd(m: Int, n: Int) : Int =
     if(n == 0) m else gcd(n, m % n)
 }
+
+object TotientTimer {
+  import P99Int._
+  def time[A](label: String)(block: => A) : A = {
+    val start = System.currentTimeMillis()
+    val n = block
+    println(s"$label ${System.currentTimeMillis() - start} ms")
+    return n
+  }
+
+  def timeTotient(n: Int): Unit = {
+    time("preload primes") {
+      primes takeWhile { _ <= Math.sqrt(n) } force
+    }
+    time("totient") {
+      n.totient
+    }
+    time("totientImproved") {
+      n.totientImproved()
+    }
+  }
+}

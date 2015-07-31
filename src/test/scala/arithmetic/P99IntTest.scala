@@ -45,4 +45,8 @@ class P99IntTest extends FunSuite {
   test("The improved totient function for 10 counts 4 coprimes") {
     assert(4 === 10.totientImproved)
   }
+
+  test("execute totient benchmarks") {
+    TotientTimer.timeTotient(10090)
+  }
 }
