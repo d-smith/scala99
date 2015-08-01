@@ -41,6 +41,8 @@ object P99Int {
 
   def gcd(m: Int, n: Int) : Int =
     if(n == 0) m else gcd(n, m % n)
+
+  def listPrimes(r: Range) = primes dropWhile { _ < r.start } takeWhile { _ <= r.end } toList
 }
 
 object TotientTimer {
