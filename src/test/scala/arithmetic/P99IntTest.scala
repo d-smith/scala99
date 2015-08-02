@@ -53,4 +53,8 @@ class P99IntTest extends FunSuite {
   test("generate the prime numbers in a range") {
     assert(listPrimes(7 to 31) === List(7,11,13,17,19,23,29,31))
   }
+
+  test("we can express positive even numbers greater than two as the sum of two prime numbers") {
+    assert(28.goldbach === (5,23))
+  }
 }

@@ -32,6 +32,11 @@ class P99Int(n: Int) {
   def totientImproved() : Int = n.primeFactorsMultiplicity.foldLeft(1){ (r,f) =>
     f match { case (p,m) => r * (p - 1) * Math.pow(p, m - 1).toInt}
   }
+
+  def goldbach: (Int,Int) = primes takeWhile { _ < n } find { p => (n - p).isPrime } match {
+    case None => throw new NoSuchElementException
+    case Some(p1) => (p1, n - p1)
+  }
 }
 
 object P99Int {
