@@ -57,4 +57,16 @@ class P99IntTest extends FunSuite {
   test("we can express positive even numbers greater than two as the sum of two prime numbers") {
     assert(28.goldbach === (5,23))
   }
+
+  test("we can print even numbers in a range as their goldbach sum") {
+
+  }
+
+  test("we can print even numbers in a given range as their goldbach sum") {
+    printGoldbachs(3 to 1000)
+  }
+
+  test("we can print the  golbach numbers in a range with both primes greater than a given limit") {
+    printGoldbachsLimited(3 to 1000, 50)
+  }
 }

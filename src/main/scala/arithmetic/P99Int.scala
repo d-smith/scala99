@@ -48,6 +48,16 @@ object P99Int {
     if(n == 0) m else gcd(n, m % n)
 
   def listPrimes(r: Range) = primes dropWhile { _ < r.start } takeWhile { _ <= r.end } toList
+
+  def printGoldbachsLimited(r: Range, limit: Int): Unit = {
+    r filter { n => n >= 2 && n % 2 == 0 } map { n => (n, n.goldbach) } filter { _._2._1 > limit} foreach {
+      _ match { case (n, (p1, p2)) => println(s"$n = $p1 + $p2") }
+    }
+  }
+
+  def printGoldbachs(r: Range): Unit = {
+    printGoldbachsLimited(r,0)
+  }
 }
 
 object TotientTimer {
