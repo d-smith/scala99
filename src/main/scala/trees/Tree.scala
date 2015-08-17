@@ -25,4 +25,5 @@ object Tree {
       val t2 = cBalanced((n - 1) / 2 + 1, value)
       t1.flatMap(l => t2.flatMap(t => List(Node(value,l,t),Node(value,t,l))))
   }
+
 }
