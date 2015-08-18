@@ -24,4 +24,16 @@ class TreeTest extends FunSuite {
       assert(trees.distinct === trees)
     }
   }
+
+  test("we can assess if a tree is symmetric or not") {
+    assert(Node('a', Node('b'), Node('c')).isSymmetric === true)
+
+
+    val b = Node('b',End,Node('d'))
+    val f = Node('f',Node('h'),Node('i'))
+    val c = Node('c', Node('e',Node('g'),End),f)
+    val a = Node('a', b,c)
+
+    assert(a.isSymmetric === false)
+  }
 }
